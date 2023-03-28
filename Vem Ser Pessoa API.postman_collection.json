@@ -1,0 +1,1353 @@
+{
+	"info": {
+		"_postman_id": "cac97393-b508-4422-9329-048e7846ffb3",
+		"name": "Vem Ser Pessoa API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26592865"
+	},
+	"item": [
+		{
+			"name": "Pessoa",
+			"item": [
+				{
+					"name": "Atualizar pessoa",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"Giuseppe Miniquiello\",\r\n  \"dataNascimento\": \"1998-11-18\",\r\n  \"cpf\": \"19991705571\",\r\n  \"email\": \"gabriel.luppi@dbccompany.com.br\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/pessoa/:idPessoa",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"pessoa",
+								":idPessoa"
+							],
+							"variable": [
+								{
+									"key": "idPessoa",
+									"value": "11387"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar pessoa por ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/pessoa/:idPessoa",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"pessoa",
+								":idPessoa"
+							],
+							"variable": [
+								{
+									"key": "idPessoa",
+									"value": "11387"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Pessoas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/pessoa?pagina=0&tamanhoDasPaginas=30",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"pessoa"
+							],
+							"query": [
+								{
+									"key": "pagina",
+									"value": "0"
+								},
+								{
+									"key": "tamanhoDasPaginas",
+									"value": "30"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Adiciona Pessoa",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"Giuseppe Camolle\",\r\n  \"dataNascimento\": \"1998-11-18\",\r\n  \"cpf\": \"54405555109\",\r\n  \"email\": \"gabriel.luppi@dbccompany.com.br\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/pessoa",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"pessoa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Adiciona Pessoa sem dados",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/pessoa",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"pessoa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar pessoa por CPF",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/pessoa/:cpf/cpf",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"pessoa",
+								":cpf",
+								"cpf"
+							],
+							"variable": [
+								{
+									"key": "cpf",
+									"value": "19991705571"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar pessoas por nome",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/pessoa/byname?nome=Giuseppe",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"pessoa",
+								"byname"
+							],
+							"query": [
+								{
+									"key": "nome",
+									"value": "Giuseppe"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar pessoa por relatório",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/pessoa/relatorio?idPessoa=11411",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"pessoa",
+								"relatorio"
+							],
+							"query": [
+								{
+									"key": "idPessoa",
+									"value": "11411"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar pessoa lista completa",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/pessoa/lista-completa?idPessoa=11411",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"pessoa",
+								"lista-completa"
+							],
+							"query": [
+								{
+									"key": "idPessoa",
+									"value": "11411"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar pessoas com enderecos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/pessoa/lista-com-enderecos?idPessoa=11411",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"pessoa",
+								"lista-com-enderecos"
+							],
+							"query": [
+								{
+									"key": "idPessoa",
+									"value": "11411"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar pessoas com contatos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/pessoa/lista-com-contatos?idPessoa=11411",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"pessoa",
+								"lista-com-contatos"
+							],
+							"query": [
+								{
+									"key": "idPessoa",
+									"value": "11411"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar pessoas entre datas de nascimento",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/pessoa/data-nascimento?dtfinal=01/01/1969&data=01/01/2023",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"pessoa",
+								"data-nascimento"
+							],
+							"query": [
+								{
+									"key": "dtfinal",
+									"value": "01/01/1969"
+								},
+								{
+									"key": "data",
+									"value": "01/01/2023"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Endereco",
+			"item": [
+				{
+					"name": "Listar endereco por ID do endereco",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/endereco/:idEndereco",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"endereco",
+								":idEndereco"
+							],
+							"variable": [
+								{
+									"key": "idEndereco",
+									"value": "2151"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar endereco por ID do endereco inexistente",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/endereco/:idEndereco",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"endereco",
+								":idEndereco"
+							],
+							"variable": [
+								{
+									"key": "idEndereco",
+									"value": "2151123123"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastrar novo endereco",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"idPessoa\": 11411,\r\n  \"tipo\": \"RESIDENCIAL\",\r\n  \"logradouro\": \"Rua Paraguai\",\r\n  \"numero\": 194,\r\n  \"complemento\": \"k22\",\r\n  \"cep\": \"13040106\",\r\n  \"cidade\": \"Campinas\",\r\n  \"estado\": \"SP\",\r\n  \"pais\": \"Brasil\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/endereco/:idPessoa/?idPessoa=11411",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"endereco",
+								":idPessoa",
+								""
+							],
+							"query": [
+								{
+									"key": "idPessoa",
+									"value": "11411"
+								}
+							],
+							"variable": [
+								{
+									"key": "idPessoa",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastrar novo endereco sem dados",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/endereco/:idPessoa/?idPessoa=11411",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"endereco",
+								":idPessoa",
+								""
+							],
+							"query": [
+								{
+									"key": "idPessoa",
+									"value": "11411"
+								}
+							],
+							"variable": [
+								{
+									"key": "idPessoa",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar endereco atraves do idEndereco",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"idPessoa\": 11411,\r\n  \"tipo\": \"RESIDENCIAL\",\r\n  \"logradouro\": \"Rua Paraguai\",\r\n  \"numero\": 194,\r\n  \"complemento\": \"\",\r\n  \"cep\": \"13040106\",\r\n  \"cidade\": \"Campinas\",\r\n  \"estado\": \"SP\",\r\n  \"pais\": \"Brasil\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/endereco/:idEndereco",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"endereco",
+								":idEndereco"
+							],
+							"variable": [
+								{
+									"key": "idEndereco",
+									"value": "2151"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar endereco atraves do idEndereco inexistente",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"idPessoa\": 11411,\r\n  \"tipo\": \"RESIDENCIAL\",\r\n  \"logradouro\": \"Rua Paraguai\",\r\n  \"numero\": 194,\r\n  \"complemento\": \"\",\r\n  \"cep\": \"13040106\",\r\n  \"cidade\": \"Campinas\",\r\n  \"estado\": \"SP\",\r\n  \"pais\": \"Brasil\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/endereco/:idEndereco",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"endereco",
+								":idEndereco"
+							],
+							"variable": [
+								{
+									"key": "idEndereco",
+									"value": "2151123123"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar endereco atraves do idEndereco",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/endereco/:idEndereco",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"endereco",
+								":idEndereco"
+							],
+							"variable": [
+								{
+									"key": "idEndereco",
+									"value": "2151"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar endereco atraves do idEndereco inexistente",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/endereco/:idEndereco",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"endereco",
+								":idEndereco"
+							],
+							"variable": [
+								{
+									"key": "idEndereco",
+									"value": "2151123123"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar enredecos cadastrados",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/endereco?pagina=0&tamanhoDasPaginas=30",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"endereco"
+							],
+							"query": [
+								{
+									"key": "pagina",
+									"value": "0"
+								},
+								{
+									"key": "tamanhoDasPaginas",
+									"value": "30"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar enredecos cadastrados tamanho das paginas 0",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/endereco?pagina=0&tamanhoDasPaginas=0",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"endereco"
+							],
+							"query": [
+								{
+									"key": "pagina",
+									"value": "0"
+								},
+								{
+									"key": "tamanhoDasPaginas",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar enderecos pelo Pais",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/endereco/retorna-por-pais?País=Brasil",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"endereco",
+								"retorna-por-pais"
+							],
+							"query": [
+								{
+									"key": "País",
+									"value": "Brasil"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar enderecos pelo Pais dados invalidos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/endereco/retorna-por-pais?País=1001010111010101010",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"endereco",
+								"retorna-por-pais"
+							],
+							"query": [
+								{
+									"key": "País",
+									"value": "1001010111010101010"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar enderecos pelo idPessoa",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/endereco/retorna-por-id-pessoa?idPessoa=11411",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"endereco",
+								"retorna-por-id-pessoa"
+							],
+							"query": [
+								{
+									"key": "idPessoa",
+									"value": "11411"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar enderecos pelo idPessoa invalido",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/endereco/retorna-por-id-pessoa?idPessoa=11411123123",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"endereco",
+								"retorna-por-id-pessoa"
+							],
+							"query": [
+								{
+									"key": "idPessoa",
+									"value": "11411123123"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Contato",
+			"item": [
+				{
+					"name": "Atualizar contato",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"idPessoa\": 11411,\r\n  \"tipoContato\": \"COMERCIAL\",\r\n  \"telefone\": \"(54)91234-1232\",\r\n  \"descricao\": \"whatsapp\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/contato/:idContato",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"contato",
+								":idContato"
+							],
+							"variable": [
+								{
+									"key": "idContato",
+									"value": "1808"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar contato id invalido",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"idPessoa\": 11411,\r\n  \"tipoContato\": \"COMERCIAL\",\r\n  \"telefone\": \"(54)91234-1232\",\r\n  \"descricao\": \"whatsapp\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/contato/:idContato",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"contato",
+								":idContato"
+							],
+							"variable": [
+								{
+									"key": "idContato",
+									"value": "1808123123"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastrar novo contato",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"idPessoa\": 11411,\r\n  \"tipoContato\": \"RESIDENCIAL\",\r\n  \"telefone\": \"(54)91234-1232\",\r\n  \"descricao\": \"whatsapp\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/contato/:idPessoa",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"contato",
+								":idPessoa"
+							],
+							"variable": [
+								{
+									"key": "idPessoa",
+									"value": "11411"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastrar novo contato idPessoa invalido",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"idPessoa\": 11411,\r\n  \"tipoContato\": \"RESIDENCIAL\",\r\n  \"telefone\": \"(54)91234-1232\",\r\n  \"descricao\": \"whatsapp\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/contato/:idPessoa",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"contato",
+								":idPessoa"
+							],
+							"variable": [
+								{
+									"key": "idPessoa",
+									"value": "11411123123"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar contatos por pessoa",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/contato/:idPessoa",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"contato",
+								":idPessoa"
+							],
+							"variable": [
+								{
+									"key": "idPessoa",
+									"value": "11411"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar contatos por pessoa idPessoa invalido",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/contato/:idPessoa",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"contato",
+								":idPessoa"
+							],
+							"variable": [
+								{
+									"key": "idPessoa",
+									"value": "114113213123"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar contatos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/contato",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"contato"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Apagar contato",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/contato/:idContato",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"contato",
+								":idContato"
+							],
+							"variable": [
+								{
+									"key": "idContato",
+									"value": "1808"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Apagar contato idContato invalido",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/contato/:idContato",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"contato",
+								":idContato"
+							],
+							"variable": [
+								{
+									"key": "idContato",
+									"value": "18083123123213"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Token",
+			"item": [
+				{
+					"name": "Obter token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"login\": \"admin\",\r\n  \"senha\": \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/auth",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

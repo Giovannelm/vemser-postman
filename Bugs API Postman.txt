@@ -1,0 +1,21 @@
+Endpoint Cadastro de endereço pede Path na url mas só aceita Query
+
+Endpoint Cadastrar novo contato só aceita tipo de contato RESIDENCIAL e COMERCIAL, mas não especifica na documentação essa seleção.
+
+Endpoint de apagar contato mostra código 200 e não 204
+
+Endpoint de criar contato mostra código 200 e não 201
+
+Endpoint de criar endereco mostra código 200 e não 201
+
+Endpoint de apagar endereco mostra código 200 e não 204
+
+Endpoint de listar enderecos cadastrados com tamanho de página 0 retorna erro 500
+
+Listar enderecos pelo País com valor numérico retorna 200
+
+Postman não aceita data como o Swagger aceita
+
+
+
+
