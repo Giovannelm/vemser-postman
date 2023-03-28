@@ -529,7 +529,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"idPessoa\": 11411,\r\n  \"tipo\": \"RESIDENCIAL\",\r\n  \"logradouro\": \"Rua Paraguai\",\r\n  \"numero\": 194,\r\n  \"complemento\": \"k22\",\r\n  \"cep\": \"13040106\",\r\n  \"cidade\": \"Campinas\",\r\n  \"estado\": \"SP\",\r\n  \"pais\": \"Brasil\"\r\n}",
+							"raw": "{\r\n  \"idPessoa\": 11411,\r\n  \"tipo\": \"RESIDENCIAL\",\r\n  \"logradouro\": \"{{$randomStreetName}}\",\r\n  \"numero\": {{$randomInt}},\r\n  \"complemento\": \"\",\r\n  \"cep\": \"13040106\",\r\n  \"cidade\": \"{{$randomCity}}\",\r\n  \"estado\": \"{{$randomCountryCode}}\",\r\n  \"pais\": \"{{$randomCountry}}\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -629,7 +629,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"idPessoa\": 11411,\r\n  \"tipo\": \"RESIDENCIAL\",\r\n  \"logradouro\": \"Rua Paraguai\",\r\n  \"numero\": 194,\r\n  \"complemento\": \"\",\r\n  \"cep\": \"13040106\",\r\n  \"cidade\": \"Campinas\",\r\n  \"estado\": \"SP\",\r\n  \"pais\": \"Brasil\"\r\n}",
+							"raw": "{\r\n  \"idPessoa\": 11411,\r\n  \"tipo\": \"RESIDENCIAL\",\r\n  \"logradouro\": \"{{$randomStreetName}}\",\r\n  \"numero\": {{$randomInt}},\r\n  \"complemento\": \"\",\r\n  \"cep\": \"13040106\",\r\n  \"cidade\": \"{{$randomCity}}\",\r\n  \"estado\": \"{{$randomCountryCode}}\",\r\n  \"pais\": \"{{$randomCountry}}\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -856,7 +856,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{base_url}}/endereco/retorna-por-pais?País=Brasil",
+							"raw": "{{base_url}}/endereco/retorna-por-pais?País={{$randomCountry}}",
 							"host": [
 								"{{base_url}}"
 							],
@@ -867,7 +867,7 @@
 							"query": [
 								{
 									"key": "País",
-									"value": "Brasil"
+									"value": "{{$randomCountry}}"
 								}
 							]
 						}
